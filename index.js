@@ -8,9 +8,9 @@ let _cloudFormationService = null;
 class ServerlessSQSTagPlugin {
 
   get stackName() {
-    if (this.provider.serverless.service.provider.stackName &&
-        this.provider.serverless.service.provider.stackName.length > 0) {
-      return `${this.provider.serverless.service.provider.stackName}`;
+    if (this.serverless.service.provider.stackName &&
+        this.serverless.service.provider.stackName.length > 0) {
+      return `${this.serverless.service.provider.stackName}`;
     }
     return `${this.serverless.service.service}-${this.options.stage}`;
   }
